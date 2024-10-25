@@ -1,4 +1,4 @@
-/*	Question Set 1 - Easy */
+
 
 /* Q1: Who is the senior most employee based on job title? */
 
@@ -46,9 +46,6 @@ LIMIT 1;
 
 
 
-
-/* Question Set 2 - Moderate */
-
 /* Q1: Write query to return the email, first name, last name, & Genre of all Rock Music listeners. 
 Return your list ordered alphabetically by email starting with A. */
 
@@ -66,16 +63,6 @@ WHERE track_id IN(
 ORDER BY email;
 
 
-/* Method 2 */
-
-SELECT DISTINCT email AS Email,first_name AS FirstName, last_name AS LastName, genre.name AS Name
-FROM customer
-JOIN invoice ON invoice.customer_id = customer.customer_id
-JOIN invoiceline ON invoiceline.invoice_id = invoice.invoice_id
-JOIN track ON track.track_id = invoiceline.track_id
-JOIN genre ON genre.genre_id = track.genre_id
-WHERE genre.name LIKE 'Rock'
-ORDER BY email;
 
 
 /* Q2: Let's invite the artists who have written the most rock music in our dataset. 
@@ -103,9 +90,6 @@ WHERE miliseconds > (
 ORDER BY miliseconds DESC;
 
 
-
-
-/* Question Set 3 - Advance */
 
 /* Q1: Find how much amount spent by each customer on artists? Write a query to return customer name, artist name and total spent */
 
